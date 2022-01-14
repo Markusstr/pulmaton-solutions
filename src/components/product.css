@@ -1,0 +1,21 @@
+.product-container {
+    flex: 1
+}
+
+.product-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.product-name {
+    flex: 4
+}
+
+.product-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1
+}

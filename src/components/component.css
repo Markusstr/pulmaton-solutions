@@ -1,0 +1,9 @@
+.component-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.component-info {
+    display: flex;
+    flex-direction: row;
+}
