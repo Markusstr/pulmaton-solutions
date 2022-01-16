@@ -143,13 +143,13 @@ export default function Main() {
         {
             componentName: "Lasiovi",
             componentChosenAmount: 0,
-            componentLocation: "C-1",
+            componentLocation: "E-1",
             componentUnit: "kpl"
         },
         {
             componentName: "Ruuvi",
             componentChosenAmount: 0,
-            componentLocation: "C-2",
+            componentLocation: "A-2",
             componentUnit: "kpl"
         },
         {
