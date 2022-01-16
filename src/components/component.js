@@ -6,17 +6,19 @@ export default function Component(props) {
 
 
     return (
-        <div className="component-container">
+        <ul className="component-container">
             {props.componentLocationList.map(item => (
                 item.componentChosenAmount > 0 ?
-                <div className="component-info">
-                    <p>{item.componentName}</p>
-                    <p>{item.componentChosenAmount}</p>
-                    <p>{item.componentLocation}</p>
-                </div>
+                <li key={item.componentName} className="component-info-box">
+                    <h2 id="component-name">{item.componentName}</h2>
+                    <div id="component-additional-info">
+                        <p>Määrä: {Number.isInteger(item.componentChosenAmount) ? item.componentChosenAmount : item.componentChosenAmount.toFixed(1)} {item.componentUnit} </p>
+                        <p>Sijainti: {item.componentLocation}</p>
+                    </div>
+                </li>
                 :
                 ""
             ))}
-        </div>
+        </ul>
     )
 }

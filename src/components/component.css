@@ -1,9 +1,24 @@
 .component-container {
     flex: 1;
-    padding: 20px;
+    padding: 15px;
 }
 
-.component-info {
+.component-info-box {
     display: flex;
     flex-direction: row;
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.component-info-box:last-child {
+    border-bottom: none;
+}
+
+#component-name {
+    display: flex;
+    align-items: center;
+}
+
+#component-additional-info {
+    margin-left: 30px;
+    font-size: 13px;
 }
