@@ -1,9 +1,9 @@
 .product-container {
-    flex: 1
+    flex: 1;
+    padding: 15px
 }
 
 .product-info {
-    padding: 10px;
     display: flex;
     flex-direction: row;
 }
@@ -18,4 +18,14 @@
     justify-content: space-between;
     align-items: center;
     flex: 1
+}
+
+#product-confirm-button {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
 }
