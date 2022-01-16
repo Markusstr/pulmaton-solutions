@@ -14,28 +14,23 @@ export default function Main() {
             productComponents: [
                 {
                     componentName: "Lasiovi",
-                    componentAmount: 2,
-                    componentUnit: "kpl"
+                    componentAmount: 2
                 },
                 {
                     componentName: "Vanerilevy",
-                    componentAmount: 1,
-                    componentUnit: "kpl"
+                    componentAmount: 1
                 },
                 {
                     componentName: "Hyllylevy",
-                    componentAmount: 1,
-                    componentUnit: "kpl"
+                    componentAmount: 1
                 },
                 {
                     componentName: "Ruuvi",
-                    componentAmount: 16,
-                    componentUnit: "kpl"
+                    componentAmount: 16
                 },
                 {
                     componentName: "Vedin",
-                    componentAmount: 2,
-                    componentUnit: "kpl"
+                    componentAmount: 2
                 }
             ]
         },
@@ -45,18 +40,15 @@ export default function Main() {
             productComponents: [
                 {
                     componentName: "Kangaspala",
-                    componentAmount: 1,
-                    componentUnit: "kpl"
+                    componentAmount: 1
                 },
                 {
                     componentName: "Ruuvi",
-                    componentAmount: 8,
-                    componentUnit: "kpl"
+                    componentAmount: 8
                 },
                 {
                     componentName: "Koivulankku",
-                    componentAmount: 3,
-                    componentUnit: "m"
+                    componentAmount: 3
                 }
             ]
         },
@@ -66,23 +58,19 @@ export default function Main() {
             productComponents: [
                 {
                     componentName: "Koivulankku",
-                    componentAmount: 1.4,
-                    componentUnit: "m"
+                    componentAmount: 1.4
                 },
                 {
                     componentName: "Pieni mäntylevy",
-                    componentAmount: 1,
-                    componentUnit: "kpl"
+                    componentAmount: 1
                 },
                 {
                     componentName: "Ruuvi",
-                    componentAmount: 4,
-                    componentUnit: "kpl"
+                    componentAmount: 4
                 },
                 {
                     componentName: "Vedin",
-                    componentAmount: 1,
-                    componentUnit: "kpl"
+                    componentAmount: 1
                 }
 
             ]
@@ -93,28 +81,23 @@ export default function Main() {
             productComponents: [
                 {
                     componentName: "Iso mäntylevy",
-                    componentAmount: 1,
-                    componentUnit: "kpl"
+                    componentAmount: 1
                 },
                 {
                     componentName: "Vanerilevy",
-                    componentAmount: 1,
-                    componentUnit: "kpl"
+                    componentAmount: 1
                 },
                 {
                     componentName: "Vedin",
-                    componentAmount: 2,
-                    componentUnit: "kpl"
+                    componentAmount: 2
                 },
                 {
                     componentName: "Ruuvi",
-                    componentAmount: 20,
-                    componentUnit: "kpl"
+                    componentAmount: 20
                 },
                 {
                     componentName: "Hyllylevy",
-                    componentAmount: 2,
-                    componentUnit: "kpl"
+                    componentAmount: 2
                 }
             ]
         }
@@ -124,47 +107,56 @@ export default function Main() {
         {
             componentName: "Hyllylevy",
             componentChosenAmount: 0,
-            componentLocation: "C-10"
+            componentLocation: "C-10",
+            componentUnit: "kpl"
         },
         {
             componentName: "Pieni mäntylevy",
             componentChosenAmount: 0,
-            componentLocation: "B-2"
+            componentLocation: "B-2",
+            componentUnit: "kpl"
         },
         {
             componentName: "Iso mäntylevy",
             componentChosenAmount: 0,
-            componentLocation: "B-1"
+            componentLocation: "B-1",
+            componentUnit: "kpl"
         },
         {
             componentName: "Koivulankku",
             componentChosenAmount: 0,
-            componentLocation: "D-4"
+            componentLocation: "D-4",
+            componentUnit: "m"
         },
         {
             componentName: "Vanerilevy",
             componentChosenAmount: 0,
-            componentLocation: "D-1"
+            componentLocation: "D-1",
+            componentUnit: "kpl"
         },
         {
             componentName: "Kangaspala",
             componentChosenAmount: 0,
-            componentLocation: "A-4"
+            componentLocation: "A-4",
+            componentUnit: "kpl"
         },
         {
             componentName: "Lasiovi",
             componentChosenAmount: 0,
-            componentLocation: "E-1"
+            componentLocation: "C-1",
+            componentUnit: "kpl"
         },
         {
             componentName: "Ruuvi",
             componentChosenAmount: 0,
-            componentLocation: "A-2"
+            componentLocation: "C-2",
+            componentUnit: "kpl"
         },
         {
             componentName: "Vedin",
             componentChosenAmount: 0,
-            componentLocation: "A-3"
+            componentLocation: "A-3",
+            componentUnit: "kpl"
         },
     ]);
 
@@ -180,16 +172,37 @@ export default function Main() {
         let totalList = [...componentLocationList]
         totalList = totalList.map(item => ({...item, componentChosenAmount: 0}))
 
-        productList.forEach(item => {
-            if (item.productChosenAmount > 0) {
-                item.productComponents.forEach(component => {
-                    totalList = totalList.map(item2 => 
-                        item2.componentName === component.componentName ? {...item2, componentChosenAmount: item2.componentChosenAmount + component.componentAmount} : item2
+        productList.forEach(productItem => {
+            if (productItem.productChosenAmount > 0) {
+                productItem.productComponents.forEach(component => {
+                    totalList = totalList.map(listItem => 
+                        listItem.componentName === component.componentName ? {...listItem, componentChosenAmount: listItem.componentChosenAmount + component.componentAmount * productItem.productChosenAmount} : listItem
                     );
                 });
             }
         });
-        totalList.sort((a,b) => a.componentLocation < b.componentLocation);
+        totalList.sort((a,b) => {
+            let locationA = a.componentLocation.split("-");
+            let locationB = b.componentLocation.split("-");
+
+            if (locationA[0] < locationB[0]) {
+                return -1;
+            }
+            else if (locationA[0] > locationB[0]) {
+                return 1;
+            }
+            else {
+                if (parseInt(locationA[1]) < parseInt(locationB[1])) {
+                    return -1;
+                }
+                else if (parseInt(locationA[1]) > parseInt(locationB[1])) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            }
+        });
         setComponentLocationList(totalList);
     }
 
