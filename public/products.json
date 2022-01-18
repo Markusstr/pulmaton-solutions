@@ -1,0 +1,95 @@
+[
+    {
+        "productName": "Vitriini",
+        "productChosenAmount": 0,
+        "productComponents": [
+            {
+                "componentName": "Lasiovi",
+                "componentAmount": 2
+            },
+            {
+                "componentName": "Vanerilevy",
+                "componentAmount": 1
+            },
+            {
+                "componentName": "Hyllylevy",
+                "componentAmount": 1
+            },
+            {
+                "componentName": "Ruuvi",
+                "componentAmount": 16
+            },
+            {
+                "componentName": "Vedin",
+                "componentAmount": 2
+            }
+        ]
+    },
+    {
+        "productName": "Tuoli",
+        "productChosenAmount": 0,
+        "productComponents": [
+            {
+                "componentName": "Kangaspala",
+                "componentAmount": 1
+            },
+            {
+                "componentName": "Ruuvi",
+                "componentAmount": 8
+            },
+            {
+                "componentName": "Koivulankku",
+                "componentAmount": 3
+            }
+        ]
+    },
+    {
+        "productName": "Sivupöytä",
+        "productChosenAmount": 0,
+        "productComponents": [
+            {
+                "componentName": "Koivulankku",
+                "componentAmount": 1.4
+            },
+            {
+                "componentName": "Pieni mäntylevy",
+                "componentAmount": 1
+            },
+            {
+                "componentName": "Ruuvi",
+                "componentAmount": 4
+            },
+            {
+                "componentName": "Vedin",
+                "componentAmount": 1
+            }
+
+        ]
+    },
+    {
+        "productName": "Kaappi",
+        "productChosenAmount": 0,
+        "productComponents": [
+            {
+                "componentName": "Iso mäntylevy",
+                "componentAmount": 1
+            },
+            {
+                "componentName": "Vanerilevy",
+                "componentAmount": 1
+            },
+            {
+                "componentName": "Vedin",
+                "componentAmount": 2
+            },
+            {
+                "componentName": "Ruuvi",
+                "componentAmount": 20
+            },
+            {
+                "componentName": "Hyllylevy",
+                "componentAmount": 2
+            }
+        ]
+    }
+]

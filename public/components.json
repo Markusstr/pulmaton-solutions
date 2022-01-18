@@ -1,0 +1,56 @@
+[
+    {
+        "componentName": "Hyllylevy",
+        "componentChosenAmount": 0,
+        "componentLocation": "C-10",
+        "componentUnit": "kpl"
+    },
+    {
+        "componentName": "Pieni mäntylevy",
+        "componentChosenAmount": 0,
+        "componentLocation": "B-2",
+        "componentUnit": "kpl"
+    },
+    {
+        "componentName": "Iso mäntylevy",
+        "componentChosenAmount": 0,
+        "componentLocation": "B-1",
+        "componentUnit": "kpl"
+    },
+    {
+        "componentName": "Koivulankku",
+        "componentChosenAmount": 0,
+        "componentLocation": "D-4",
+        "componentUnit": "m"
+    },
+    {
+        "componentName": "Vanerilevy",
+        "componentChosenAmount": 0,
+        "componentLocation": "D-1",
+        "componentUnit": "kpl"
+    },
+    {
+        "componentName": "Kangaspala",
+        "componentChosenAmount": 0,
+        "componentLocation": "A-4",
+        "componentUnit": "kpl"
+    },
+    {
+        "componentName": "Lasiovi",
+        "componentChosenAmount": 0,
+        "componentLocation": "E-1",
+        "componentUnit": "kpl"
+    },
+    {
+        "componentName": "Ruuvi",
+        "componentChosenAmount": 0,
+        "componentLocation": "A-2",
+        "componentUnit": "kpl"
+    },
+    {
+        "componentName": "Vedin",
+        "componentChosenAmount": 0,
+        "componentLocation": "A-3",
+        "componentUnit": "kpl"
+    }
+]
