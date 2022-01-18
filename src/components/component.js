@@ -4,11 +4,11 @@ import "./component.css";
 
 export default function Component(props) {
 
-
     return (
+        props.componentLocationList !== undefined &&
         <ul className="component-container">
             {props.componentLocationList.map(item => (
-                item.componentChosenAmount > 0 ?
+                item.componentChosenAmount > 0 &&
                 <li key={item.componentName} className="component-info-box">
                     <h2 id="component-name">{item.componentName}</h2>
                     <div id="component-additional-info">
@@ -16,8 +16,6 @@ export default function Component(props) {
                         <p>Sijainti: {item.componentLocation}</p>
                     </div>
                 </li>
-                :
-                ""
             ))}
         </ul>
     )

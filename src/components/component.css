@@ -16,9 +16,12 @@
 #component-name {
     display: flex;
     align-items: center;
+    flex: 4;
+    font-size: 20px;
 }
 
 #component-additional-info {
     margin-left: 30px;
     font-size: 13px;
+    flex: 7;
 }
